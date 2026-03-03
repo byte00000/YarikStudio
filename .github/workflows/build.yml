@@ -31,7 +31,8 @@ jobs:
           echo '{"sdk":{"version":"8.0.0","rollForward":"latestFeature"}}' > global.json
 
       - name: Dotnet Restore
-        run: dotnet restore
+        run: |
+          dotnet restore -p:TargetFrameworks="net7.0-windows;net8.0-windows"
 
       - name: Build .Net7
         run: dotnet publish AssetStudio.GUI/AssetStudio.GUI.csproj -c Release -f net7.0-windows --no-self-contained
