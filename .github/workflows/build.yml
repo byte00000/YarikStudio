@@ -27,8 +27,8 @@ jobs:
             7.0.x
             8.0.x
 
-      - name: Nuget Restore
-        run: nuget restore
+      - name: Dotnet Restore
+        run: dotnet restore
 
       - name: Build .Net7
         run: msbuild /t:AssetStudio_GUI:publish /p:Configuration=Release /p:TargetFramework=net7.0-windows /p:SelfContained=false /verbosity:minimal
